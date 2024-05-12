@@ -1,0 +1,101 @@
+esxtop
+
+Reiniciar todos os serviços de um host ESXi
+
+~ #  /sbin/services.sh restart
+###################################################
+Modo manutenção do Host ESXi
+
+~ # vim-cmd hostsvc/maintenance_mode_enter
+###################################################
+Sair do Modo manutenção do Host ESXi
+
+~ # vim-cmd hostsvc/maintenance_mode_exit
+###################################################
+Comandos de networking
+
+Ver interfaces de rede
+~ # esxcfg-nics -l
+###################################################
+Virtual Switches
+~ # esxcfg-vswitch -l
+###################################################
+
+Listando as máquinas virtuais
+~ # vim-cmd vmsvc/getallvms
+
+###################################################
+
+Iniciar a máquina virtual
+~ # vim-cmd vmsvc/power.on Vmid
+
+~ # vim-cmd vmsvc/power.on 10
+
+##################################################
+
+Parar máquina virtual
+~ # vim-cmd vmsvc/power.off Vmid
+~ # vim-cmd vmsvc/power.off 10
+
+#################################################
+
+Reiniciar máquina virtual
+~ # vim-cmd vmsvc/power.reboot Vmid
+~ # vim-cmd vmsvc/power.reboot 10
+
+################################################
+Ver o estado de uma máquina virtual
+~ # vim-cmd vmsvc/power.getstate Vmid
+~ # vim-cmd vmsvc/power.getstate 10
+
+################################################
+Ver informações e configurações de uma máquina virtual
+~ # vim-cmd vmsvc/get.summary Vmid
+
+~ # vim-cmd vmsvc/get.summary 10
+
+###############################################
+
+Deletar uma máquina virtual
+~ # vim-cmd vmsvc/destroy Vmid
+~ # vim-cmd vmsvc/destroy 10
+
+##############################################
+
+Instalar VMware Tools
+~ # vim-cmd vmsvc/tools.install vmid
+~ # vim-cmd vmsvc/tools.install 10
+
+##############################################
+
+
+Registrar uma máquina virtual e o inventário do host
+~ # vim-cmd solo/registervm /vmfs/vol/datastore01/rhel01/rhel01.vmx
+
+##############################################
+
+
+Listar adaptadores iSCSI
+~ # esxcli iscsi adapter list
+
+Rescan e Rediscovery de dispositivos de armazenamento
+~ # esxcli iscsi adapter discovery rediscover
+~ # esxcli storage core adapter rescan --adapter=vmhba33
+
+#########################################################
+
+Comandos SAN/Fibre Channel
+Listar adaptadores FC, WWNN y WWPN
+~ # esxcli storage san fc list
+Adapter: vmhba33
+   Port ID: 012820
+   Node Name: 20:00:00:xx
+   Port Name: 21:00:00:xx
+   Speed: 10 Gbps
+   Port Type: NPort
+   Port State: ONLINE
+
+Mostra informação de eventos Fibre Channel
+~ # esxcli storage san fc events get
+
+###########################################################
