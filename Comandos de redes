@@ -1,0 +1,18 @@
+Listar 
+esxcli network ip hosts list 
+
+Mudar DNS Server VCSA
+
+# /opt/vmware/share/vami/vami_config_net.
+
+Main Menu
+0)      Show Current Configuration (scroll with Shift-PgUp/PgDown)
+1)      Exit this program
+2)      Default Gateway
+3)      Hostname
+4)      DNS
+5)      Proxy Server
+6)      IP Address Allocation for eth0
+
+########################################################################################
+
