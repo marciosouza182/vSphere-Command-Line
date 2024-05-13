@@ -1,0 +1,3 @@
+
+
+# vmkfstools -X 90G -d eagerzeroedthick  /vmfs/volumes/datastore1/GUEST-001/DISK_1.vmdk
