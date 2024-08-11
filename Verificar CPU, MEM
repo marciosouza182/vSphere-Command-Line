@@ -1,0 +1,14 @@
+Executar o comando esxtop:
+
+Navegação dentro do esxtop:
+
+Pressione c: para mostrar informações sobre a CPU.
+Pressione m: para mostrar informações sobre a memória.
+Pressione v: para exibir informações de CPU e memória por máquina virtual.
+Opções adicionais:
+
+Pressione V: para filtrar apenas as máquinas virtuais.
+Pressione f: para abrir o menu de campos e escolher quais métricas específicas você quer monitorar.
+Pressione h: para acessar a ajuda do esxtop.
+Fechar o esxtop:
+Para sair do esxtop, basta pressionar q.
